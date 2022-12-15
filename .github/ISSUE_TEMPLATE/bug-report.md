@@ -4,6 +4,16 @@ about: 'Create a report to help us improve'
 
 ---
 
+### Search Terms
+
+
+
+<!--
+  What search terms did you use when trying to find an existing bug report?
+  List them here so people in the future can find this one more easily.
+  Remember to include *closed* issues in your search.
+-->
+
 ### Expected Behavior
 
 
@@ -36,6 +46,10 @@ https://github.com/TypeStrong/ts-node-repros
 * node version:
 * TypeScript version:
 * tsconfig.json, if you're using one:
+```
+{}
+```
+* package.json:
 ```
 {}
 ```

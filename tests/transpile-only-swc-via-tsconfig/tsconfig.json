@@ -1,11 +1,13 @@
 {
   "ts-node": {
     "transpileOnly": true,
-    "transpiler": "ts-node/transpilers/swc-experimental"
+    "transpiler": "ts-node/transpilers/swc"
   },
   "compilerOptions": {
-    "module": "ESNext",
+    "target": "ES2018",
+    "module": "CommonJS",
     "allowJs": true,
-    "jsx": "react"
+    "jsx": "react",
+    "experimentalDecorators": true
   }
 }

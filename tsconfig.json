@@ -1,10 +1,14 @@
+// This tsconfig.json drives Intellisense
 {
   "$schema": "./tsconfig.schemastore-schema.json",
   "compilerOptions": {
-    "target": "es2015",
-    "lib": ["es2015", "dom"],
-    "rootDir": "src",
-    "outDir": "dist",
+    // `target` and `lib` match @tsconfig/bases for node12, since that's the oldest node LTS, so it's the oldest node we support
+    "target": "es2019",
+    "lib": ["es2019", "es2020.promise", "es2020.bigint", "es2020.string", "dom"],
+    "rootDir": ".",
+    "outDir": "temp",
+    "tsBuildInfoFile": "temp/tsconfig.tsbuildinfo",
+    "noEmit": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "strict": true,
@@ -14,7 +18,13 @@
     "types": ["node"],
     "stripInternal": true,
     "incremental": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "importsNotUsedAsValues": "error",
+    "allowJs": true,
+
+    // Enable to assist in sanity-checking your changes to JS files, but note you will see many unrelated type errors!
+    // "checkJs": true,
+    // "noImplicitAny": false
   },
   "include": [
     "src/**/*"
@@ -22,6 +32,10 @@
   "typedocOptions": {
     "entryPoints": ["./src/index.ts"],
     "readme": "none",
-    "out": "website/static/api"
+    "out": "website/static/api",
+    "excludeTags": ["allof"],
+    "categorizeByGroup": false,
+    "categoryOrder": ["Basic", "REPL", "Transpiler", "ESM Loader", "Other"],
+    "defaultCategory": "Other"
   }
 }

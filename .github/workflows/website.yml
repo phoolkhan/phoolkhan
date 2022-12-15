@@ -3,7 +3,7 @@ on:
   # branches pushed by collaborators
   push:
     branches:
-      - master
+      - docs
 jobs:
   build:
     name: Build & Deploy
@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 14
       # Render typedoc
-      - run: npm install && ./node_modules/.bin/typedoc
+      - run: npm install && npx typedoc
       # Render docusaurus and deploy website
       - run: |
           set -euo pipefail
